@@ -1,6 +1,6 @@
 import pytest
 
-from services.TextProcessor import TextProcessor
+from services.text_processor import TextProcessor
 
 
 @pytest.fixture

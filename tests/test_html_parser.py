@@ -1,6 +1,6 @@
 import pytest
 
-from services.HTMLParser import HTMLParser
+from services.html_parser import HTMLParser
 
 
 @pytest.fixture

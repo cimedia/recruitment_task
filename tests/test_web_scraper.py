@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch
 
-from services.WebScraper import WebScraper
+from services.web_scraper import WebScraper
 
 
 @pytest.fixture

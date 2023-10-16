@@ -1,9 +1,9 @@
 import os
 
-from services.FileSaver import FileSaver
-from services.HTMLParser import HTMLParser
-from services.TextProcessor import TextProcessor
-from services.WebScraper import WebScraper
+from services.file_saver import FileSaver
+from services.html_parser import HTMLParser
+from services.text_processor import TextProcessor
+from services.web_scraper import WebScraper
 
 
 def main():
@@ -11,10 +11,10 @@ def main():
 
     html_content = WebScraper.scrape_website(URL)
 
-    html_parser = HTMLParser.remove_html_tags(html=html_content)
+    parsed_html = HTMLParser.remove_html_tags(html=html_content)
     text_processor = TextProcessor()
 
-    clean_text = text_processor.clean_text(html_parser)
+    clean_text = text_processor.clean_text(parsed_html)
     words = clean_text.split()
 
     word_frequencies = text_processor.count_word_frequencies(words)
