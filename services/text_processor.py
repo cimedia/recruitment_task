@@ -20,7 +20,15 @@ class TextProcessor:
         for word in words:
             word_frequencies[word] += 1
 
-        sorted_word_frequencies = sorted(
-            word_frequencies.items(), key=lambda x: x[1], reverse=True
-        )
+        sorted_word_frequencies = []
+
+        for key, value in word_frequencies.items():
+            i = 0
+            while (
+                i < len(sorted_word_frequencies)
+                and value <= sorted_word_frequencies[i][1]
+            ):
+                i += 1
+            sorted_word_frequencies.insert(i, (key, value))
+
         return sorted_word_frequencies
